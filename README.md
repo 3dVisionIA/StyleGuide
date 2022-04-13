@@ -501,7 +501,8 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |            |    |-- Materials
         |            |        |-- #M_Flower_01
         |            |        |-- #MI_Flower_01_Evil
-        |            |        |-- #MI_Flower_01_Unicorn    
+        |            |        |-- #MI_Flower_01_Unicorn
+        |            |        |-- #MI_Metal_Red_Rough
         |            |            
         |            |-- Rose_01 (uses material from materiallibrary, has animation asset)
         |                |-- #SK_Rose_01
