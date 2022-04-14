@@ -329,17 +329,17 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Physical Materials            | PM_        |            |                                  |
 | Decal                         | M_, MI_    | _Decal     |                                  |
 
-| M_Opaque_Master should be used as master material for ALL opaque materials
-| M_Glass_Master is the master material for all glass
+M_Opaque_Master should be used as master material for ALL opaque materials
+M_Glass_Master is the master material for all glass
 
-| Our commonly used materials for vehicles:
-| 	MI_Metal_Steel
-| 	MI_Metal_Steel_MediumRough
-| 	
-| 	MI_PaintedMetal_DynapacRed
-| 	MI_PaintedMetal_DynapacWhite
-| 	MI_PaintedMetal_DynapacGrey
-| 	MI_PaintedMetal_DynapacBlack
+Our commonly used materials for vehicles:
+	MI_Metal_Steel
+	MI_Metal_Steel_MediumRough
+ 	
+	MI_PaintedMetal_DynapacRed
+	MI_PaintedMetal_DynapacWhite
+	MI_PaintedMetal_DynapacGrey
+	MI_PaintedMetal_DynapacBlack
 
 
 
