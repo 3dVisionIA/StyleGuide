@@ -352,6 +352,9 @@ Our commonly used materials for vehicles:
 	MI_Glass_Clear
 	MI_Mirror
 	MI_Reflector
+	MI_Light_Dim
+	MI_Light_Medium
+	MI_Light_Bright
 	
 
 
