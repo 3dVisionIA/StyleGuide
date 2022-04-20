@@ -348,7 +348,10 @@ Our commonly used materials for vehicles:
 	MI_Plastic_Black
 	MI_Plastic_White
 	MI_Plastic_Grey
-	MI_Glass
+	MI_Glass_Windshield
+	MI_Mirror
+	MI_Reflector
+	
 
 
 
