@@ -345,6 +345,10 @@ Our commonly used materials for vehicles:
 	MI_Rubber
 	MI_Rubber_Tire
 	MI_Fabric_Seat
+	MI_Plastic_Black
+	MI_Plastic_White
+	MI_Plastic_Grey
+	MI_Glass
 
 
 
