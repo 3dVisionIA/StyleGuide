@@ -308,7 +308,8 @@ Our commonly used materials for vehicles:
 	MI_PaintedMetal_DynapacGrey
 	MI_PaintedMetal_DynapacBlack
 	MI_Metal_Steel
-	MI_Metal_Steel_MediumRough
+	MI_Metal_Steel_Polished
+	MI_Metal_Steel_Rough
 	MI_Metal_Pattern
 	MI_Rubber
 	MI_Rubber_Tire
