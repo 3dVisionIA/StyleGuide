@@ -294,7 +294,7 @@ When naming an asset, use these tables to determine the prefix and suffix to use
 | Material Parameter Collection | MPC_       |            |                                  |
 | Subsurface Profile            | SP_        |            |                                  |
 | Physical Materials            | PM_        |            |                                  |
-| Decal                         | M_, MI_    | _Decal     |                                  |
+| Decal                         | M_, MI_    |            |                                  |
 
 M_Opaque_Master should be used as master material for ALL opaque materials
 M_Glass_Master is the master material for all glass
@@ -324,6 +324,12 @@ Our commonly used materials for vehicles:
 	MI_Light_Dim
 	MI_Light_Medium
 	MI_Light_Bright
+	
+	MI_Decal_CC900_Warning
+	MI_Decal_CC900_Left_Red
+	MI_Decal_CC900_Left_White
+	MI_Decal_CC900_Right_Red
+	MI_Decal_CC900_Right_White
 	
 
 
