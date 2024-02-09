@@ -472,6 +472,29 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 ### 2e1 Example Project Content Structure
 <pre>
 |-- Content
+    |-- AudioLibrary
+    |    |-- Ambient
+    |    |    |-- Ocean
+    |    |        |-- #S_Waves_Cue
+    |    |        |-- #S_Waves    
+    |    |            
+    |    |-- SoundClasses
+    |        |-- #Ambient
+    |        |-- #Effects
+    |        |-- #Master
+    |        |-- #Music
+    |        
+    |-- <a href="#2.8">MaterialLibrary</a>
+    |    |-- Metal
+    |    |-- Paint
+    |    |-- Wathering
+    |    |-- Utility
+    |    |    |-- #MF_DotProduct
+    |    |    |-- #RT_RearViewMirror
+    |    |
+    |    |-- Organic
+    |        |-- #M_Plant
+    |
     |-- <a href="#2.2">WorldOfDynapac</a>
         |-- Art
         |    |-- Rural
@@ -523,18 +546,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |                |
         |                |-- <a href="#2.7">Animations</a>
         |                    |-- #A_Rose_01
-        |-- AudioLibrary
-        |    |-- Ambient
-        |    |    |-- Ocean
-        |    |        |-- #S_Waves_Cue
-        |    |        |-- #S_Waves    
-        |    |            
-        |    |-- SoundClasses
-        |        |-- #Ambient
-        |        |-- #Effects
-        |        |-- #Master
-        |        |-- #Music
-        |   
+	|
         |-- <a href="#2.5">Core</a> (things that are going to get children placed here)
         |    |-- Editor
         |    |-- Framework
@@ -599,17 +611,6 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |    |-- Vaxjo_Gameplay
         |    |-- VaxjoVR_P
         |    |-- VaxjoVR_Gameplay
-        |    
-        |-- <a href="#2.8">MaterialLibrary</a>
-        |    |-- Metal
-        |    |-- Paint
-        |    |-- Wathering
-        |    |-- Utility
-        |    |    |-- #MF_DotProduct
-        |    |    |-- #RT_RearViewMirror
-        |    |
-        |    |-- Organic
-        |        |-- #M_Plant
         |    
         |-- Placeables
         |    |-- Cameras
