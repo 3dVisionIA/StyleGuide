@@ -473,28 +473,28 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 <pre>
 |-- Root
 	|-- AudioLibrary
-    |	|-- Ambient
-    |	|	|-- Ocean
-    |	|		|-- #S_Waves_Cue
-    |	|		|-- #S_Waves    
-    |	|            
-    |	|-- SoundClasses
-    |		|-- #Ambient
-    |		|-- #Effects
-    |		|-- #Master
-    |		|-- #Music
-    |        
-    |-- <a href="#2.8">MaterialLibrary</a>
-    |	|-- Metal
-    |	|-- Paint
-    |	|-- Wathering
-    |	|-- Utility
-    |	|	|-- #MF_DotProduct
-    |	|	|-- #RT_RearViewMirror
-    |	|
-    |	|-- Organic
-    |		|-- #M_Plant
-    |
+	|	|-- Ambient
+	|	|	|-- Ocean
+	|	|		|-- #S_Waves_Cue
+	|	|		|-- #S_Waves	
+	|	|			
+	|	|-- SoundClasses
+	|		|-- #Ambient
+	|		|-- #Effects
+	|		|-- #Master
+	|		|-- #Music
+	|		
+	|-- <a href="#2.8">MaterialLibrary</a>
+	|	|-- Metal
+	|	|-- Paint
+	|	|-- Wathering
+	|	|-- Utility
+	|	|	|-- #MF_DotProduct
+	|	|	|-- #RT_RearViewMirror
+	|	|
+	|	|-- Organic
+	|		|-- #M_Plant
+	|
 	|--	TextureLibrary
 	|	|-- Wood
 	|
@@ -517,7 +517,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 	|				|		|-- #MI_Plant_Lilly_01
 	|				|		|-- #MI_Plant_Lilly_01_Evil
 	|				|		|-- #MI_Plant_Lilly_01_Unicorn
-	|				|            
+	|				|			
 	|				|-- Flower_01 (has its own material)
 	|				|	|-- #SM_Flower_01
 	|				|	|-- Textures
@@ -530,7 +530,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 	|				|		|-- #MI_Flower_01_Evil
 	|				|		|-- #MI_Flower_01_Unicorn
 	|				|		|-- #MI_Metal_Steel_Red_Rough
-	|				|            
+	|				|			
 	|				|-- Rose_01 (uses material from materiallibrary, has animation asset)
 	|					|-- #SK_Rose_01
 	|					|
@@ -694,7 +694,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 			|	|	|-- #BPC_CommandZoom
 			|	|	|-- #BPC_CommandOrbit
 			|	|	|-- #BPC_CommandDragOnFloor
-			|	|    
+			|	|	
 			|	|-- Placeables
 			|		|-- Cameras
 			|		|	|-- #BP_Camera
@@ -707,7 +707,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 			|			|-- #BP_Vehicle
 			|			|-- #BPI_Vehicle (put as high as possible in implementation-chain)
 			|			|-- #ST_Vehicle (put as high as possible in implementation-chain)
-			|        
+			|		
 			|-- Effects
 			|	|-- Common
 			|		|-- Electrical
@@ -716,8 +716,8 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 			|		|	|-- Textures
 			|		|	|-- Materials
 			|		|-- Fire
-			|		|-- Weather    
-			|    
+			|		|-- Weather	
+			|	
 			|-- <a href="#2.4">Maps</a>
 			|	|-- Main_ProjectName (all projects always start game on Entry level, from here go to game level, levels it loads should not be dependent on this)
 			|	|-- Vaxjo_P
@@ -727,7 +727,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 			|	|-- Vaxjo_Gameplay
 			|	|-- VaxjoVR_P
 			|	|-- VaxjoVR_Gameplay
-			|    
+			|	
 			|-- Placeables
 			|	|-- Cameras
 			|	|	|-- #BP_Camera_Overview
@@ -748,11 +748,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 				|	|-- WB_HealthBar
 				|
 				|-- MainMenu
-					|-- WB_MainMenu    
-			
-
-		
-
+					|-- WB_MainMenu
 </pre>
 	
 The reasons for this structure are listed in the following sub-sections.
