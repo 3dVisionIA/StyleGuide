@@ -471,199 +471,288 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 <a name="2e1"><a>
 ### 2e1 Example Project Content Structure
 <pre>
-|-- Content
-    |-- AudioLibrary
-    |    |-- Ambient
-    |    |    |-- Ocean
-    |    |        |-- #S_Waves_Cue
-    |    |        |-- #S_Waves    
-    |    |            
-    |    |-- SoundClasses
-    |        |-- #Ambient
-    |        |-- #Effects
-    |        |-- #Master
-    |        |-- #Music
+|-- Root
+	|-- AudioLibrary
+    |	|-- Ambient
+    |	|	|-- Ocean
+    |	|		|-- #S_Waves_Cue
+    |	|		|-- #S_Waves    
+    |	|            
+    |	|-- SoundClasses
+    |		|-- #Ambient
+    |		|-- #Effects
+    |		|-- #Master
+    |		|-- #Music
     |        
     |-- <a href="#2.8">MaterialLibrary</a>
-    |    |-- Metal
-    |    |-- Paint
-    |    |-- Wathering
-    |    |-- Utility
-    |    |    |-- #MF_DotProduct
-    |    |    |-- #RT_RearViewMirror
-    |    |
-    |    |-- Organic
-    |        |-- #M_Plant
+    |	|-- Metal
+    |	|-- Paint
+    |	|-- Wathering
+    |	|-- Utility
+    |	|	|-- #MF_DotProduct
+    |	|	|-- #RT_RearViewMirror
+    |	|
+    |	|-- Organic
+    |		|-- #M_Plant
     |
-    |-- <a href="#2.2">WorldOfDynapac</a>
-        |-- Art
-        |    |-- Rural
-        |    |    |-- Buildings
-        |    |    |-- Rocks
-        |    |    |-- Trees
-        |    |
-        |    |-- Desert
-        |        |-- Buildings
-        |        |-- Rocks
-        |        |-- Trees
-        |        |-- Bushes
-        |        |-- Flowers
-        |            |-- Lilly_01 (generic, uses material from materiallibrary)
-        |            |    |-- #SM_Lilly_01
-        |            |    |-- Textures
-        |            |    |    |-- #T_Lilly_01_D
-        |            |    |    |-- #T_Lilly_01_N
-        |            |    |    |-- #T_Lilly_01_ORM
-        |            |    |
-        |            |    |-- Materials
-        |            |        |-- #MI_Plant_Lilly_01
-        |            |        |-- #MI_Plant_Lilly_01_Evil
-        |            |        |-- #MI_Plant_Lilly_01_Unicorn
-        |            |            
-        |            |-- Flower_01 (has its own material)
-        |            |    |-- #SM_Flower_01
-        |            |    |-- Textures
-        |            |    |    |-- #T_Flower_01_D
-        |            |    |    |-- #T_Flower_01_N
-        |            |    |    |-- #T_Flower_01_ORM
-        |            |    |
-        |            |    |-- Materials
-        |            |        |-- #M_Flower_01
-        |            |        |-- #MI_Flower_01_Evil
-        |            |        |-- #MI_Flower_01_Unicorn
-        |            |        |-- #MI_Metal_Steel_Red_Rough
-        |            |            
-        |            |-- Rose_01 (uses material from materiallibrary, has animation asset)
-        |                |-- #SK_Rose_01
-        |                |
-        |                |-- Textures
-        |                |    |-- #T_Rose_01_D
-        |                |    |-- #T_Rose_01_N
-        |                |    |-- #T_Rose_01_ORM
-        |                |
-        |                |-- Materials
-        |                |    |-- #MI_Plant_Rose_01
-        |                |
-        |                |-- <a href="#2.7">Animations</a>
-        |                    |-- #A_Rose_01
+	|--	TextureLibrary
+	|	|-- Wood
 	|
-        |-- <a href="#2.5">Core</a> (things that are going to get children placed here)
-        |    |-- Editor
-        |    |-- Framework
-        |    |    |-- <a href="#2.1.2">Gamemodes</a>
-        |    |    |    -- #GM_Main
-        |    |    |    -- #GM_Entry
-        |    |    |-- #PC_Main
-        |    |    |-- #GS_Main
-        |    |    |
-        |    |    |-- (Multiple roots. Not using "base" in asset name. Root is almost empty, components for input added in children.)
-        |    |    |-- #BP_VRPawn
-	|    |    |-- #BP_VRPawn_Main
-	|    |    |-- #BP_VRPawn_Balcony
-        |    |    |-- #BP_TouchPawn
-	|    |    |-- #BP_TouchPawn_Main
-        |    |    |-- #BP_TouchPawn_Balcony
-        |    |    |-- #BP_DesktopPawn
-	|    |    |-- #BP_DesktopPawn_Main
-        |    |    |
-        |    |    |-- (Or single root.)
-        |    |    |-- #BP_BaseChar
-	|    |    |-- #BP_BaseChar_Friendly
-	|    |    |-- #BP_BaseChar_Friendly_Wizard
-        |    |    |-- #BP_BaseChar_Enemy
-        |    |    |-- #BP_BaseChar_Enemy_Goblin
-        |    |    |-- #BP_BaseChar_Enemy_Goblin_Grunt
-	|    |    |
-	|    |    |-- (Command-components with functionality for certain input actions. Which component to call is decided in the pawn-blueprint.)
-	|    |    |-- #BPC_CommandPan (Use in eg. BP_TouchPawn_Main and BP_DesktopPawn_Main, but not in VR_Pawn_Main)
-	|    |    |-- #BPC_CommandZoom
-	|    |    |-- #BPC_CommandOrbit
-	|    |    |-- #BPC_CommandDragOnFloor
-        |    |    
-        |    |-- Placeables
-        |    |    |-- Cameras
-        |    |        |-- #BP_Camera
-        |    |        |-- #BP_CineCamera (Only used when not controlled by the user)
-        |    |    |-- Weather
-        |    |        |-- #BP_Weather
-        |    |
-        |    |-- Vehicles
-        |        |-- #BP_Vehicle
-        |        |-- #BPI_Vehicle (put as high as possible in implementation-chain)
-        |        |-- #ST_Vehicle (put as high as possible in implementation-chain)
-        |        
-        |-- Effects
-        |    |-- Common
-        |    |-- Electrical
-        |    |    |-- #SM_Lightning
-        |    |    |-- #PS_Lightning
-        |    |    |-- Textures
-        |    |    |-- Materials
-        |    |-- Fire
-        |    |-- Weather    
-        |    
-        |-- <a href="#2.4">Maps</a>
-        |    |-- Entry (all projects always start game on Entry level, from here go to game level, levels it loads should not be dependent on this)
-        |    |-- Vaxjo_P
-        |    |-- Vaxjo_Audio
-        |    |-- Vaxjo_Lighting
-        |    |-- Vaxjo_Geo
-        |    |-- Vaxjo_Gameplay
-        |    |-- VaxjoVR_P
-        |    |-- VaxjoVR_Gameplay
-        |    
-        |-- Placeables
-        |    |-- Cameras
-        |    |    |-- #BP_Camera_Overview
-        |    |
-        |    |-- Weather
-        |    |    |-- #BP_Weather_Rain (blueprint with rain particle effect in it that starts when enter trigger box)
-        |    |    |-- #BP_SunSky
-        |    |    |-- #BP_DayNightCycle
-        |    |
-        |    |-- ExplosionBarrel
-        |        |-- #BP_ExplosionBarrel
-        |        
-        |-- UI
-        |    |-- Textures
-        |    |-- Materials
-        |    |-- Fonts
-        |    |-- HUD
-        |    |    |-- WB_HealthBar
-        |    |
-        |    |-- MainMenu
-        |        |-- WB_MainMenu    
-        |
-        |-- Vehicles
-            |-- Common
-            |    |-- Blueprints
-            |    |    |-- #BP_Vehicle_Roller
-            |    |    |-- #BP_Vehicle_Paver
-            |    |    |-- #BPI_Screed
-            |    |
-            |    |-- Textures
-            |    |    |-- #T_DynapacRAL201_D
-            |    |    |-- #T_DynapacRAL201_N
-            |    |
-            |    |-- Materials
-            |        |-- #M_DynapacRAL201
-            |
-            |-- <a href="#2.1.3">CS2500</a>
-                |-- Blueprints
-                |    |-- #BP_Vehicle_Roller_CS2500
-                |
-                |-- Audio
-                |    |-- S_CS2500_Honk_Cue
-                |    |-- S_CS2500_Honk
-                |
-                |-- Textures
-                |-- Materials
-                |-- Meshes
-                |    |-- #SM_CS2500
-                |    |-- #SK_CS2500
-                |
-                |-- Animation
-                    |-- #ABP_CS2500
+	|--	ModelLibrary
+	|	|-- Environment
+	|		|-- Rural
+	|			|-- Buildings
+	|			|-- Rocks
+	|			|-- Trees
+	|			|-- Bushes
+	|			|-- Flowers
+	|				|-- Lilly_01 (generic, uses material from materiallibrary)
+	|				|	|-- #SM_Lilly_01
+	|				|	|-- Textures
+	|				|	|	|-- #T_Lilly_01_D
+	|				|	|	|-- #T_Lilly_01_N
+	|				|	|	|-- #T_Lilly_01_ORM
+	|				|	|
+	|				|	|-- Materials
+	|				|		|-- #MI_Plant_Lilly_01
+	|				|		|-- #MI_Plant_Lilly_01_Evil
+	|				|		|-- #MI_Plant_Lilly_01_Unicorn
+	|				|            
+	|				|-- Flower_01 (has its own material)
+	|				|	|-- #SM_Flower_01
+	|				|	|-- Textures
+	|				|	|	|-- #T_Flower_01_D
+	|				|	|	|-- #T_Flower_01_N
+	|				|	|	|-- #T_Flower_01_ORM
+	|				|	|
+	|				|	|-- Materials
+	|				|		|-- #M_Flower_01
+	|				|		|-- #MI_Flower_01_Evil
+	|				|		|-- #MI_Flower_01_Unicorn
+	|				|		|-- #MI_Metal_Steel_Red_Rough
+	|				|            
+	|				|-- Rose_01 (uses material from materiallibrary, has animation asset)
+	|					|-- #SK_Rose_01
+	|					|
+	|					|-- Textures
+	|					|	|-- #T_Rose_01_D
+	|					|	|-- #T_Rose_01_N
+	|					|	|-- #T_Rose_01_ORM
+	|					|
+	|					|-- Materials
+	|					|	|-- #MI_Plant_Rose_01
+	|					|
+	|					|-- <a href="#2.7">Animations</a>
+	|						|-- #A_Rose_01
+	|
+	|-- Clients
+		|-- <a href="#2.2">ClientName (eg. "Dynapac")</a>
+			|-- Assets
+			|	|-- Environments
+			|	|	|-- Buildings
+			|	|		|-- RacingStadium
+			|	|			|-- Meshes
+			|	|			|-- Materials
+			|	|			|-- Textures
+			|	|
+			|	|-- Props
+			|	|	|-- Characters
+			|	|		|-- PaverDriver
+			|	|			|-- Meshes
+			|	|			|-- Materials
+			|	|			|-- Textures
+			|	|
+			|	|-- GenericTextures
+			|	|	|-- Logos
+			|	|		|-- T_DynapacLogo_Red_D
+			|	|
+			|	|-- UI
+			|	|	|-- Textures
+			|	|		|-- T_ArrowLeft_D			
+			|	|
+			|	|-- Products
+			|		|-- Toothbrushes
+			|		|	|-- Assemblies
+			|		|	|	|-- Toothbrush01
+			|		|	|	|	|-- Blueprints
+			|		|	|	|		|-- BP_Toothbrush01
+			|		|	|	|
+			|		|	|	|-- Toothbrush02
+			|		|	|		|-- Blueprints
+			|		|	|			|-- BP_Toothbrush02
+			|		|	|-- Parts
+			|		|		|-- Toothbrush01
+			|		|		|	|-- Blueprints
+			|		|		|	|	|-- BP_Part_Toothbrush01
+			|		|		|	|-- Meshes
+			|		|		|	|	|-- Toothbrush01_Head
+			|		|		|	|	|-- Toothbrush01_Body
+			|		|		|	|-- Textures
+			|		|		|	|-- Materials
+			|		|		|
+			|		|		|-- Toothbrush02
+			|		|		|	|-- Blueprints
+			|		|		|	|-- Meshes
+			|		|		|	|-- Textures
+			|		|		|	|-- Materials
+			|		|		|
+			|		|		|-- ToothbrushStand
+			|		|			|-- Blueprints
+			|		|			|-- Meshes
+			|		|			|-- Textures
+			|		|			|-- Materials
+			|		|
+			|		|-- Paving
+			|			|-- Screeds
+			|			|	|-- Assemblies
+			|			|	|	|-- V5100TV
+			|			|	|		|-- Blueprints
+			|			|	|			|-- BP_V5100TV
+			|			|	|
+			|			|	|-- Parts
+			|			|		|-- DY-000014246_MainModule
+			|			|		|	|-- Blueprints
+			|			|		|	|-- Meshes
+			|			|		|	|	|-- SM_000014246_MainModule
+			|			|		|	|-- Textures
+			|			|		|	|-- Materials
+			|			|		|	|
+			|			|		|-- DY-000014248_Vibration
+			|			|		|	|-- Blueprints
+			|			|		|	|	|-- BP_Part_DY-000014248_Vibration_Base
+			|			|		|	|	|-- BP_Part_DY-000014248_Vibration_Handlebars
+			|			|		|	|	|-- BP_Part_DY-000014248_Vibration_AntiSlip
+			|			|		|	|
+			|			|		|	|-- Meshes
+			|			|		|	|	|-- SM_DY-000014248_Vibration_Body
+			|			|		|	|	|-- SM_DY-000014248_Vibration_BottomPlate
+			|			|		|	|	|-- SM_DY-000014248_Vibration_Handlebars
+			|			|		|	|	|-- SM_DY-000014248_Vibration_AntiSlip
+			|			|		|	|	|-- SM_DY-000014248_Vibration_Remote
+			|			|		|	|
+			|			|		|	|-- Textures
+			|			|		|	|-- Materials
+			|			|		|
+			|			|		|-- DY-000014246_MainModule
+			|			|			|-- Blueprints
+			|			|			|-- Meshes
+			|			|				|-- SM_000014246_MainModule
+			|			|			|-- Textures
+			|			|			|-- Materials
+			|			|
+			|			|-- HighwayPavers
+			|
+			|-- Projects
+			|	|-- ProjectName1
+			|	|	|-- Client_In
+			|	|	|-- Client_Out
+			|	|	|-- Showroom
+			|	|	|-- Cinematics
+			|   |
+			|	|-- ProjectName2
+			|		|-- Client_In
+			|		|-- Client_Out
+			|		|-- Cinematics
+			|
+			|
+			|	#######################################################################
+			|	########################## UNREAL ONLY BELOW ##########################
+			|	#######################################################################
+			|
+			|			
+			|-- <a href="#2.5">Core</a> (things that are going to get children placed here)
+			|	|-- Editor
+			|	|-- Framework
+			|	|	|-- <a href="#2.1.2">Gamemodes</a>
+			|	|	|	|-- #GM_Main
+			|	|	|	|-- #GM_Entry
+			|	|	|
+			|	|	|-- Pawns
+			|	|	|	|-- (Multiple roots. Not using "base" in asset name. Root is almost empty, components for input added in children.)
+			|	|	|	|-- #BP_VRPawn
+			|	|	|	|-- #BP_VRPawn_Main
+			|	|	|	|-- #BP_VRPawn_Balcony
+			|	|	|	|-- #BP_TouchPawn
+			|	|	|	|-- #BP_TouchPawn_Main
+			|	|	|	|-- #BP_TouchPawn_Balcony
+			|	|	|	|-- #BP_DesktopPawn
+			|	|	|	|-- #BP_DesktopPawn_Main
+			|	|	|	|
+			|	|	|	|-- (Or single root.)
+			|	|	|	|-- #BP_BaseChar
+			|	|	|	|-- #BP_BaseChar_Friendly
+			|	|	|	|-- #BP_BaseChar_Friendly_Wizard
+			|	|	|	|-- #BP_BaseChar_Enemy
+			|	|	|	|-- #BP_BaseChar_Enemy_Goblin
+			|	|	|	|-- #BP_BaseChar_Enemy_Goblin_Grunt
+			|	|	|	
+			|	|	|-- #PC_Main
+			|	|	|-- #GS_Main
+			|	|	|
+			|	|	|-- (Command-components with functionality for certain input actions. Which component to call is decided in the pawn-blueprint.)
+			|	|	|-- #BPC_CommandPan (Use in eg. BP_TouchPawn_Main and BP_DesktopPawn_Main, but not in VR_Pawn_Main)
+			|	|	|-- #BPC_CommandZoom
+			|	|	|-- #BPC_CommandOrbit
+			|	|	|-- #BPC_CommandDragOnFloor
+			|	|    
+			|	|-- Placeables
+			|		|-- Cameras
+			|		|	|-- #BP_Camera
+			|		|	|-- #BP_CineCamera (Only used when not controlled by the user)
+			|		|
+			|		|-- Weather
+			|		|	|-- #BP_Weather
+			|		|
+			|		|-- Vehicles
+			|			|-- #BP_Vehicle
+			|			|-- #BPI_Vehicle (put as high as possible in implementation-chain)
+			|			|-- #ST_Vehicle (put as high as possible in implementation-chain)
+			|        
+			|-- Effects
+			|	|-- Common
+			|		|-- Electrical
+			|		|	|-- #SM_Lightning
+			|		|	|-- #PS_Lightning
+			|		|	|-- Textures
+			|		|	|-- Materials
+			|		|-- Fire
+			|		|-- Weather    
+			|    
+			|-- <a href="#2.4">Maps</a>
+			|	|-- Main_ProjectName (all projects always start game on Entry level, from here go to game level, levels it loads should not be dependent on this)
+			|	|-- Vaxjo_P
+			|	|-- Vaxjo_Audio
+			|	|-- Vaxjo_Lighting
+			|	|-- Vaxjo_Geo
+			|	|-- Vaxjo_Gameplay
+			|	|-- VaxjoVR_P
+			|	|-- VaxjoVR_Gameplay
+			|    
+			|-- Placeables
+			|	|-- Cameras
+			|	|	|-- #BP_Camera_Overview
+			|	|
+			|	|-- Weather
+			|	|	|-- #BP_Weather_Rain (blueprint with rain particle effect in it that starts when enter trigger box)
+			|	|	|-- #BP_SunSky
+			|	|	|-- #BP_DayNightCycle
+			|	|
+			|	|-- ExplosionBarrel
+			|		|-- #BP_ExplosionBarrel
+			|
+			|-- UI
+				|-- Textures
+				|-- Materials
+				|-- Fonts
+				|-- HUD
+				|	|-- WB_HealthBar
+				|
+				|-- MainMenu
+					|-- WB_MainMenu    
+			
+
+		
+
 </pre>
 	
 The reasons for this structure are listed in the following sub-sections.
