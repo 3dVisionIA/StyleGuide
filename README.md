@@ -1480,6 +1480,12 @@ This section will focus on Static Mesh assets and their internals.
 
 > 4.5 [Correct Scale](#s-scaled)
 
+<a name="4.0"></a>
+<a name="orientation"></a>
+### 4.0 Axis Orientation
+
+Positive X, in accordance with Unreal Engine. Models should be Positive X in Blender as well despite Blender using Negative Y by default.
+
 <a name="4.1"></a>
 <a name="s-uvs"></a>
 ### 4.1 Static Mesh UVs
