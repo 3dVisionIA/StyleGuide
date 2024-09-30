@@ -98,10 +98,6 @@ Gamemakin LLC is not a lawyer, but please don't introduce illegal actions and be
 <a name="00.1"></a>
 ### 00.1 Forbidden Characters
 
-<a name="Axis Orientation"></a>
-##### Axis Orientation
-Positive X, in accordance with Unreal Engine. Models should be Positive X in Blender as well despite Blender using Negative Y by default.
-
 #### Identifiers
 
 In any `Identifier` of any kind, **never** use the following unless absolutely forced to:
