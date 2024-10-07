@@ -307,6 +307,7 @@ Our commonly used materials for vehicles:
 	MI_PaintedMetal_DynapacWhite
 	MI_PaintedMetal_DynapacGrey
 	MI_PaintedMetal_DynapacBlack
+ 	MI_Dynapac_Dashboard_AdvWheelConsole
 	MI_Metal_Steel
 	MI_Metal_Steel_Polished
 	MI_Metal_Steel_Rough
